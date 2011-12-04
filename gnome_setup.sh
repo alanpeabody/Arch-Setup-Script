@@ -1,3 +1,5 @@
+# Assumes Gnome is setup per Arch Wiki
+
 # Update system first.
 sudo pacman -Syu
 
@@ -8,14 +10,15 @@ chsh -s /bin/zsh
 # Dev stuff
 sudo pacman -S inetutils
 sudo pacman -S ruby
-sudo pacman -S vim
-sudo pacman -Sy --noconfirm gcc patch curl zlib readline libxml2 libxslt git autoconf diffutils make libtool bison subversion gtkmm3
 sudo pacman -S erlang
+sudo pacman -Sy --noconfirm gcc patch curl zlib readline libxml2 libxslt git autoconf diffutils make libtool bison subversion gtkmm3
+
+# Vim/utils
+sudo pacman -S gvim # Gvim installs vim with ruby and xterm_clipboard support
 sudo pacman -S ctags
-sudo pacman -S sqlite3
 sudo pacman -S ack
 sudo pacman -S qt #for capybara-webkit
-sudo pacman -S inetutils
+sudo pacman -S autocutsel # noramlize wonky x11 clipboards
 
 # RVM
 bash < <(curl -s https://raw.github.com/wayneeseguin/rvm/master/binscripts/rvm-installer )
@@ -26,7 +29,8 @@ rvm use 1.9.2 --default
 sudo pacman -S redis
 cat "Please add @redis to DEAMONS in /etc/rc.conf"
 
-# Mysql
+# RDBMS
+sudo pacman -S sqlite3
 sudo pacman -S mysql
 sudo /etc/rc.d/mysqld start && sudo mysql_secure_installation
 sudo /etc/rc.d/mysqld restart
