@@ -49,6 +49,11 @@ sudo pacman -S ttf-droid ttf-ubuntu-font-family
 sudo pacman -S terminator
 sudo pacman -S gedit
 sudo pacman -S gnome-system-monitor
+sudo pacman -Sy yaourt
+
+# Sun Java
+# sudo yaourt jdk
+yaourt dropbox
 
 # Smaller title bars
 sudo sed -i '/title_vertical_pad/s|value="[0-9]\{1,2\}"|value="0"|g' /usr/share/themes/Adwaita/metacity-1/metacity-theme-3.xml
